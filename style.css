@@ -1,0 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 20px;
+  background: linear-gradient(45deg, rgb(46, 138, 110), rgb(212, 210, 44));
+}
