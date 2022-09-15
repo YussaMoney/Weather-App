@@ -17,8 +17,9 @@
   <main>
     <div class="weather-card">
       <section class="search-container">
-        <input type="search" id="search-box">
-        <div class="search-icon">iugfghjk</div>
+        <input type="text" id="search-box">
+        <button id="search-btn">Q</button>
+        <!-- <div class="search-icon"></div> -->
       </section>
       <section class="card-title">
         <h2 class="heading">
@@ -26,16 +27,25 @@
         </h2>
       </section>
       <section class="card-body">
-        <p class="temp">88</p>
-        <div class="description">
-          Cloudy <span class="weather-icon">
-            ergdd
-          </span>
+        <div class="flex">
+          <div class="descript-box">
+            <p class="descript">Rainy</p>
+            <img src="$" alt="des img">
+          </div>
+          <p class="temp">88°C</p>
         </div>
-        <p class="humidity">Humidity: 45%</p>
-        <p class="wind">Wind Speed: 80km/hr</p>
+        <div class="card-footer">
+          <p class="humidity">Humidity: 45%</p>
+          <p class="humidity">Humidity: 45%</p>
+          <p class="humidity">Humidity: 45%</p>
+          <p class="humidity">Humidity: 45%</p>
+          <p class="humidity">Humidity: 45%</p>
+          <p class="wind">Wind Speed: 80km/hr</p>
+        </div>
       </section>
     </div>
   </main>
+
+  <script src="./index.js"></script>
 </body>
 </html>
