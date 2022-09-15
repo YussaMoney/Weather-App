@@ -67,7 +67,7 @@ body {
   height: 100%;
   width: 50vw;
   padding: 2rem;
-  line-height: 2.62rem;
+  line-height: 2.72rem;
   border-top-right-radius: 70px;
   border-top-left-radius: 70px;
   border-bottom-right-radius: 30px;
@@ -79,13 +79,27 @@ body {
   margin: 0 auto;
   padding: 2rem 0;
   background: white;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 90%;
   border-top-left-radius: 15rem;
   border-top-right-radius: 15rem;
   border-bottom-left-radius: 60px;
   border-bottom-right-radius: 60px;
+}
+
+img {
+  width: 3.5rem;
+  height: 3.47rem;
+  justify-self: left;
+  margin-left: 5rem;
+  margin-right: 4rem;
+}
+
+.flex-box {
+  display: flex;
+  justify-content: center;
 }
 
 @media screen
