@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Weather App</title>
 </head>
@@ -18,58 +19,57 @@
     <div class="weather-card">
       <section class="search-container">
         <input type="text" id="search-box" placeholder="Enter Location">
-        <button id="search-btn">Q</button>
+        <button id="search-btn"><i class="material-icons" style="font-size:36px">search</i>
+        </button>
       </section>
-      <section class="card-title">
-        <h2 class="heading">
-          Weather in Abuja, Nigeria
-        </h2>
-      </section>
-      <section class="card-body">
-        <div class="flex">
-          <div class="descript-box">
-            <h3 class="descript">
-              Light rain shower
-            </h3>
-            <img src="./images/light-rain.webp" alt="des img">
-          </div>
-          <p class="temp">
-            25<span class="color">°C</span>
-          </p>
-        </div>
-        <div class="card-footer">
-          <div class="time-box flex-box">
-            <img src="./images/time.png" alt="time">
-            <h3 class="time">2022-09-16 11:11</h3>
-          </div>
 
-          <div class="precip-box flex-box">
-            <img src="./images/precip.jpg" alt="precip icon">
-            <p class="precipitate">Precipitate: <span class="accent-color">0.2</span>mm</p>
+      <div class="card-container loading">
+        <section class="card-title">
+          <h2 class="heading">
+            Weather in Abuja, Nigeria
+          </h2>
+        </section>
+        
+        <section class="card-body">
+          <div class="flex">
+            <p class="temp">
+              25<span class="color">°C</span>
+            </p>
+            <div class="descript-box">
+              <img src="./images/light-rain.webp" alt="des img">
+              <h3 class="descript">
+                Light rain shower
+              </h3>
+            </div>
           </div>
-
-          <div class="humidity-box flex-box">
-            <img src="./images/humidity.png" alt="humidity icon">
-            <p class="humidity">Humidity: <span class="accent-color">88</span>%</p>
+          <div class="card-footer">
+            <div class="time-box flex-box">
+              <img src="./images/time.png" alt="time">
+              <h3 class="time">2022-09-16 11:11</h3>
+            </div>
+            <div class="precip-box flex-box">
+              <img src="./images/precip.jpg" alt="precip icon">
+              <p class="precipitate">Precipitate: <span class="accent-color">0.2</span>mm</p>
+            </div>
+            <div class="humidity-box flex-box">
+              <img src="./images/humidity.png" alt="humidity icon">
+              <p class="humidity">Humidity: <span class="accent-color">88</span>%</p>
+            </div>
+            <div class="pressure-box flex-box">
+              <img src="./images/pressure.png" alt="pressure icon">
+              <p class="pressure">Pressure: <span class="accent-color">1015</span>mb</p>
+            </div>
+            <div class="wind_dir-box flex-box">
+              <img src="./images/images.jpg" alt="compass icon">
+              <p class="wind-dir">Wind Direction: <span class="text">SSW</span></p>
+            </div>
+            <div class="wind_speed-box flex-box">
+              <img src="./images/wind speed.png" alt="speed icon">
+              <p class="wind-speed">Wind Speed: <span class="accent-color">9</span>km/hr</p>
+            </div>
           </div>
-
-          <div class="pressure-box flex-box">
-            <img src="./images/pressure.png" alt="pressure icon">
-            <p class="pressure">Pressure: <span class="accent-color">1015</span>mb</p>
-          </div>
-
-          <div class="wind_dir-box flex-box">
-            <img src="./images/images.jpg" alt="compass icon">
-            <p class="wind-dir">Wind Direction: <span class="text">SSW</span></p>
-          </div>
-
-          <div class="wind_speed-box flex-box">
-            <img src="./images/wind speed.png" alt="speed icon">
-            <p class="wind-speed">Wind Speed: <span class="accent-color">9</span>km/hr</p>
-          </div>
-
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </main>
 
