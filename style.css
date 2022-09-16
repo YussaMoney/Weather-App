@@ -13,7 +13,8 @@ body {
 }
 
 .title {
-  letter-spacing: 0.9rem;
+  color: #7cff01;
+  letter-spacing: 0.6rem !important; 
 }
 
 .search-container {
@@ -45,14 +46,15 @@ body {
   border-bottom-right-radius: 15px;
   height: 78%;
   position: absolute;
-  background-color: green;
+  background-color: rgb(135, 143, 135);
   top: 1px;
   right: 0;
   cursor: pointer;
 }
 
 #search-btn:hover {
-  background-color: #1D7AD6;
+  background-color: #000000;
+  color: white;
 }
 
 .temp {
@@ -66,7 +68,7 @@ body {
 }
 
 .weather-card {
-  background: linear-gradient(150deg, rgba(0, 108, 248, 0.1) 15%, rgb(0, 108, 248));
+  background: linear-gradient(150deg, gray, rgba(0, 0, 0, 0.2));
   color: black;
   height: 100%;
   width: 50vw;
@@ -96,7 +98,6 @@ body {
 .flex-box img {
   width: 3.5rem;
   height: 2.6rem;
-  justify-self: left;
   margin-left: -10rem;
   margin-right: 6rem; 
 }
@@ -104,16 +105,6 @@ body {
 span.accent-color {
   color: #1D7AD6;
   font-weight: bolder;
-}
-
-.time {
-  color: #1D7AD6;
-}
-
-span.text {
-  font-weight: bolder;
-  font-style: oblique;
-  color: #0872af;
 }
 
 .temp {
@@ -130,6 +121,9 @@ span.color {
 
 .descript {
   color: cyan;
+  font-weight: bolder;
+  text-transform: capitalize;
+  margin-top: -2rem;
 }
 
 .flex-box {
@@ -138,16 +132,17 @@ span.color {
 }
 
 .descript-box {
-  margin-left: 5rem;
+  margin: -1rem 0 1rem 5rem;
 }
 
 .descript-box img {
   margin-left: 3rem;
-  width: 10rem;
-  height: 5rem;
+  width: 7rem;
+  height: 7rem;
 }
 
-.loading {
+.loading,
+.loading-fail0 {
   visibility: hidden;
   height: 10px;
   position: relative;
@@ -156,6 +151,16 @@ span.color {
 .loading::after {
   content: 'Loading...';
   color: #91ff01;
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  font-weight: bold;
+  visibility: visible;
+}
+
+.loading-fail::before {
+  content: 'Loading Failed!';
+  color: #ff0101;
   font-size: 2rem;
   position: absolute;
   top: 0;
