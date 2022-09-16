@@ -2,49 +2,42 @@
 const searchInput = document.querySelector('#search-box');
 const searchBtn = document.querySelector('#search-btn');
 const heading = document.querySelector('.heading');
-const description = document.querySelector('.descript');
+const descript = document.querySelector('.descript');
 const descriptionImg = document.querySelector('img');
-const temp = document.querySelector('.temp');
-const time = document.querySelector('.time');
-const precipitate = document.querySelector('.precipitate');
+const temperature = document.querySelector('.temp');
 const domPressure = document.querySelector('.humidity');
 const domHumidity = document.querySelector('.pressure');
 const windSpeed = document.querySelector('.wind-speed');
-const windDirection = document.querySelector('.wind-dir');
 const cardContainer = document.querySelector('.card-container');
+const body = document.querySelector('body');
 
 const weather = {
-  api_Key: '0e159deded45d38a209baaca4a31d30c',
+  apiKey: '530a24ab32b06a8382c670620ef76881',
   fetchWeather(city) {
-    const api_url = `http://api.weatherstack.com/current?access_key=${this.api_Key}&query=${city}`;
+    const api_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`;
     fetch(api_url)
       .then((response) => response.json())
-      .then((data) => this.displayWeather(data));
+      .then((data) => this.displayWeather(data))
+      .catch(() => {
+        cardContainer.classList.remove('loading');
+        Error(cardContainer.classList.add('loading-fail'));
+      });
   },
 
   displayWeather(data) {
-    const { query } = data.request;
-    const { localtime } = data.location;
-    const { temperature } = data.current;
-    const { weather_icons } = data.current;
-    const { weather_descriptions } = data.current;
-    const { precip } = data.current;
-    const { humidity } = data.current;
-    const { pressure } = data.current;
-    const { wind_dir } = data.current;
-    const { wind_speed } = data.current;
-    heading.textContent = `Weather in ${query}`;
-    description.innerHTML = weather_descriptions;
-    descriptionImg.src = weather_icons;
-    temp.innerHTML = `${temperature}<span class="color">°C</span>`;
-    time.innerHTML = `${localtime}`;
-    precipitate.innerHTML = `Precipitate: <span class='accent-color'>${precip}</span>mm`;
+    const { name } = data;
+    const { temp, pressure, humidity } = data.main;
+    const { icon, description } = data.weather[0];
+    const { speed } = data.wind;
+    heading.innerHTML = `Weather in <span class="descript">${name}</span>`;
+    descript.innerHTML = description;
+    descriptionImg.src = `https://openweathermap.org/img/wn/${icon}@4x.png`;
+    temperature.innerHTML = `${temp}<span class="color">°C</span>`;
     domHumidity.innerHTML = `Humidity: <span class='accent-color'>${humidity}</span>%`;
-    domPressure.innerHTML = `Pressure: <span class='accent-color'>${pressure}</span>mb`;
-    windDirection.innerHTML = `Wind Direction: <span class="text">${wind_dir}</span>`;
-    windSpeed.innerHTML = `Wind Speed: <span class='accent-color'>${wind_speed}</span>km/hr`;
+    domPressure.innerHTML = `Pressure: <span class='accent-color'>${pressure}</span>hPa`;
+    windSpeed.innerHTML = `Wind Speed: <span class='accent-color'>${speed}</span>m/s`;
     cardContainer.classList.remove('loading');
-    cardContainer.style.backgroundImage = url('')
+    body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${name}')`;
   },
 
   search() {
