@@ -35,7 +35,7 @@ body {
   font-size: 2rem;
   padding: 0.8rem 0 0.5rem 1rem;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 #search-btn {
@@ -47,8 +47,9 @@ body {
   height: 78%;
   position: absolute;
   background-color: green;
-  top: 0;
+  top: 0.9px;
   right: 0;
+  cursor: pointer;
 }
 
 .temp {
@@ -58,7 +59,7 @@ body {
 
 .flex {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .weather-card {
@@ -89,17 +90,48 @@ body {
   border-bottom-right-radius: 60px;
 }
 
-img {
+.flex-box img {
   width: 3.5rem;
-  height: 3.47rem;
+  height: 2.6rem;
   justify-self: left;
-  margin-left: 5rem;
-  margin-right: 4rem;
+  margin-left: -10rem;
+  margin-right: 6rem; 
+}
+
+span.accent-color {
+  color: #1D7AD6;
+  font-weight: bolder;
+}
+
+.time {
+  color: #1D7AD6;
+}
+
+span.text {
+  font-weight: bolder;
+  font-style: oblique;
+  color: #0872af;
+}
+
+.temp {
+  color: #02ffff;
+  font-weight: bolder;
+  margin-left: 4rem;
+  font-size: 5rem;
+  margin-top: 1.5rem;
+}
+
+span.color {
+  color: #1D7AD6;
+}
+
+.descript {
+  color: cyan;
 }
 
 .flex-box {
   display: flex;
-  justify-content: center;
+  margin-left: 45%;
 }
 
 @media screen

@@ -1,4 +1,6 @@
 /* eslint-disable camelcase */
+const searchInput = document.querySelector('#search-box');
+const searchBtn = document.querySelector('#search-btn');
 const heading = document.querySelector('.heading');
 const description = document.querySelector('.descript');
 const descriptionImg = document.querySelector('img');
@@ -9,6 +11,7 @@ const domPressure = document.querySelector('.humidity');
 const domHumidity = document.querySelector('.pressure');
 const windSpeed = document.querySelector('.wind-speed');
 const windDirection = document.querySelector('.wind-dir');
+let searchElement = searchInput.value;
 
 const weather = {
   api_Key: '0e159deded45d38a209baaca4a31d30c',
@@ -31,16 +34,29 @@ const weather = {
     const { wind_dir } = data.current;
     const { wind_speed } = data.current;
     heading.textContent = `Weather in ${query}`;
-    description.textContent = weather_descriptions;
+    console.log(query,
+      localtime,
+      temperature,
+      weather_icons,
+      weather_descriptions,
+      precip,
+      humidity,
+      pressure,
+      wind_dir,
+      wind_speed);
+
+    description.innerHTML = weather_descriptions;
     descriptionImg.src = weather_icons;
-    temp.textContent = `${temperature}°C`;
-    time.textContent = `Local Time: ${localtime}`;
-    time.style.color = '#89D3FF';
-    precipitate.textContent = `Precipitate: ${precip}mm`;
-    domHumidity.textContent = `Humidity: ${humidity}%`;
-    domPressure.textContent = `Pressure: ${pressure}mb`;
-    windDirection.textContent = `Wind Direction: ${wind_dir}`;
-    windSpeed.textContent = `Wind Speed: ${wind_speed}km/hr`;
+    temp.innerHTML = `${temperature}<span class="color">°C</span>`;
+    time.innerHTML = `${localtime}`;
+    precipitate.innerHTML = `Precipitate: <span class='accent-color'>${precip}</span>mm`;
+    domHumidity.innerHTML = `Humidity: <span class='accent-color'>${humidity}</span>%`;
+    domPressure.innerHTML = `Pressure: <span class='accent-color'>${pressure}</span>mb`;
+    windDirection.innerHTML = `Wind Direction: <span class="text">${wind_dir}</span>`;
+    windSpeed.innerHTML = `Wind Speed: <span class='accent-color'>${wind_speed}</span>km/hr`;
+    searchElement = '';
   },
 };
-weather.fetchWeather('egypt');
+weather.fetchWeather('Nigeria');
+// searchBtn.addEventListener('click', weather.fetchWeather);
+// weather.fetchWeather('miami');
