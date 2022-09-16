@@ -55,5 +55,5 @@ Give a ⭐️if you like this project!
 - [Teekaytech](https://github.com/Teekaytech)
 - [The Odin Project](https://www.theodinproject.com/lessons/foundations-calculator)
 - [Microverse](https://github.com/microverseinc/linters-config/tree/master/html-css)
-- [Microverse](https://openweathermap.org/current)
+- [OpenWeather](https://openweathermap.org/current)
 - [Unsplash](https://source.unsplash.com)
