@@ -29,7 +29,7 @@ const weather = {
     const { temp, pressure, humidity } = data.main;
     const { icon, description } = data.weather[0];
     const { speed } = data.wind;
-    heading.innerHTML = `Weather in <span class="descript">${name}</span>`;
+    heading.innerHTML = `Weather in <span class="light-color">${name}</span>`;
     descript.innerHTML = description;
     descriptionImg.src = `https://openweathermap.org/img/wn/${icon}@4x.png`;
     temperature.innerHTML = `${temp}<span class="color">°C</span>`;
@@ -38,6 +38,8 @@ const weather = {
     windSpeed.innerHTML = `Wind Speed: <span class='accent-color'>${speed}</span>m/s`;
     cardContainer.classList.remove('loading');
     body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${name}')`;
+    body.style.width = '100vw';
+    body.style.height = '100%';
   },
 
   search() {
@@ -48,6 +50,7 @@ const weather = {
 weather.fetchWeather('Nigeria');
 searchBtn.addEventListener('click', () => {
   weather.search();
+  searchInput.value = '';
 });
 
 searchInput.addEventListener('keyup', (e) => {
