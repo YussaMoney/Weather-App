@@ -228,10 +228,10 @@ button.font {
   }
 
   .temp {
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
     margin: 0;
-    margin-top: 0.2rem;
+    margin-top: -1rem;
   }
 
   .flex {
@@ -249,30 +249,35 @@ button.font {
   }
 
   .descript-box {
-    margin: 2rem auto 0;
+    margin: 0.5rem auto 0;
     display: flex;
   }
 
   .card-footer {
     display: block;
     width: 100%;
-    border-top-left-radius: 10rem;
-    border-top-right-radius: 10rem;
-    border-bottom-left-radius: 60px;
-    border-bottom-right-radius: 60px;
+    border-top-left-radius: 6rem;
+    border-top-right-radius: 6rem;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
     line-height: normal;
   }
 
   .flex-box img {
     grid-column: 1/2;
-    margin-left: 2rem;
-    width: 3rem;
-    height: 3rem;
+    margin-left: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .flex-box p {
+    margin-top: 0.5rem;
+    margin-left: -1.5rem;
   }
 
   .flex-box {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
