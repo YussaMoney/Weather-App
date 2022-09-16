@@ -11,13 +11,13 @@ const domPressure = document.querySelector('.humidity');
 const domHumidity = document.querySelector('.pressure');
 const windSpeed = document.querySelector('.wind-speed');
 const windDirection = document.querySelector('.wind-dir');
-let searchElement = searchInput.value;
+const cardContainer = document.querySelector('.card-container');
 
 const weather = {
   api_Key: '0e159deded45d38a209baaca4a31d30c',
   fetchWeather(city) {
-    const url = `http://api.weatherstack.com/current?access_key=${this.api_Key}&query=${city}`;
-    fetch(url)
+    const api_url = `http://api.weatherstack.com/current?access_key=${this.api_Key}&query=${city}`;
+    fetch(api_url)
       .then((response) => response.json())
       .then((data) => this.displayWeather(data));
   },
@@ -34,17 +34,6 @@ const weather = {
     const { wind_dir } = data.current;
     const { wind_speed } = data.current;
     heading.textContent = `Weather in ${query}`;
-    console.log(query,
-      localtime,
-      temperature,
-      weather_icons,
-      weather_descriptions,
-      precip,
-      humidity,
-      pressure,
-      wind_dir,
-      wind_speed);
-
     description.innerHTML = weather_descriptions;
     descriptionImg.src = weather_icons;
     temp.innerHTML = `${temperature}<span class="color">°C</span>`;
@@ -54,9 +43,23 @@ const weather = {
     domPressure.innerHTML = `Pressure: <span class='accent-color'>${pressure}</span>mb`;
     windDirection.innerHTML = `Wind Direction: <span class="text">${wind_dir}</span>`;
     windSpeed.innerHTML = `Wind Speed: <span class='accent-color'>${wind_speed}</span>km/hr`;
-    searchElement = '';
+    cardContainer.classList.remove('loading');
+    cardContainer.style.backgroundImage = url('')
+  },
+
+  search() {
+    this.fetchWeather(searchInput.value);
   },
 };
+
 weather.fetchWeather('Nigeria');
-// searchBtn.addEventListener('click', weather.fetchWeather);
-// weather.fetchWeather('miami');
+searchBtn.addEventListener('click', () => {
+  weather.search();
+});
+
+searchInput.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') {
+    weather.search();
+    searchInput.value = '';
+  }
+});
