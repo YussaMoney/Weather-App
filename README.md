@@ -4,7 +4,7 @@ An app for forecasting current weather.
 It contains `search box` where you can input the location you wish to see the current weather, `weather-card` that display current weather data.
 It also generate random beautiful image of the input location.
 
-![Weather App](Weather-App.png)
+![Weather App](./images/Weather-App.png)
 
 ## Built With
 
