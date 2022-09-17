@@ -17,10 +17,13 @@ const weather = {
     const api_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`;
     fetch(api_url)
       .then((response) => response.json())
-      .then((data) => this.displayWeather(data))
-      .catch(() => {
-        cardContainer.classList.remove('loading');
-        Error(cardContainer.classList.add('loading-fail'));
+      .then((data) => {
+        if (data.cod === '404') {
+          cardContainer.classList.add('loading-fail');
+        } else {
+          cardContainer.classList.remove('loading-fail');
+          this.displayWeather(data);
+        }
       });
   },
 

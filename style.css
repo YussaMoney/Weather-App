@@ -111,7 +111,7 @@ body {
 }
 
 .flex-box img {
-  width: 6rem;
+  width: 5rem;
   height: 5rem;
   padding: 0.5rem;
   grid-column: 2/3;
@@ -119,6 +119,8 @@ body {
 
 .flex-box p {
   margin-top: 1rem;
+  margin-left: -5rem;
+
 }
 
 span.color,
@@ -198,7 +200,7 @@ button.font {
   .flex-box img {
     grid-column: 1/2;
     margin-left: 3rem;
-    width: 4.5rem;
+    width: 4rem;
     height: 4rem;
   }
 
